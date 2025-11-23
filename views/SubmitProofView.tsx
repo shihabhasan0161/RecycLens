@@ -61,7 +61,7 @@ export const SubmitProofView: React.FC<SubmitProofViewProps> = ({ onBack, onComp
   }
 
   return (
-    <div className="relative h-screen bg-black">
+    <div className="relative min-h-[100vh] bg-black">
       {error && (
           <div className="absolute top-20 left-4 right-4 z-50 bg-red-500/90 text-white p-4 rounded-xl flex items-center gap-3 backdrop-blur-sm">
               <AlertCircle className="w-6 h-6 shrink-0" />
@@ -98,7 +98,7 @@ export const SubmitProofView: React.FC<SubmitProofViewProps> = ({ onBack, onComp
               <ArrowLeft className="w-6 h-6" />
             </button>
           </div>
-          <div className="p-6 bg-gray-900">
+          <div className="p-6 bg-gray-900 sticky bottom-0">
             <h2 className="text-white text-xl font-bold mb-2">Submit Recycling Proof</h2>
             <p className="text-gray-400 mb-6">Submit this photo to earn 1 point!</p>
             <button
