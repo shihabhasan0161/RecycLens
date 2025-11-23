@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 
 interface CameraViewProps {
   onVideoReady: (video: HTMLVideoElement) => void;
+  onError?: (error: Error) => void;
 }
 
-export const CameraView: React.FC<CameraViewProps> = ({ onVideoReady }) => {
+export const CameraView: React.FC<CameraViewProps> = ({ onVideoReady, onError }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -28,6 +29,11 @@ export const CameraView: React.FC<CameraViewProps> = ({ onVideoReady }) => {
         }
       } catch (err) {
         console.error("Error accessing camera:", err);
+        if (onError && err instanceof Error) {
+          onError(err);
+        } else if (onError) {
+          onError(new Error("Failed to access camera"));
+        }
       }
     };
 
