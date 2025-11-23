@@ -1,0 +1,8 @@
+{
+  "name": "RecycLens",
+  "description": "AI-powered Voice & Vision Recycling Assistant that helps you sort waste in real-time.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
